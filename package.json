@@ -1,0 +1,46 @@
+{
+  "name": "groups-v2",
+  "version": "1.0.0",
+  "description": "Grou.ps v2",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "dev": "webpack-dev-server --hot --progress --host 0.0.0.0 --port 8080 --env.base=client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozanilbey/groups-v2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ozanilbey/groups-v2/issues"
+  },
+  "author": "GROU.PS Inc.",
+  "license": "ISC",
+  "homepage": "https://github.com/ozanilbey/groups-v2#readme",
+  "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015-riot": "^1.1.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^1.0.1",
+    "express": "^4.16.4",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "riot": "^3.13.2",
+    "riot-hot-reload": "^1.0.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.26.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "engines": {
+    "node": "8.11.3",
+    "npm": "6.4.1"
+  }
+}
