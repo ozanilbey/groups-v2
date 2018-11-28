@@ -1,0 +1,51 @@
+@prefix: groups;
+
+@{prefix}-auth.@{prefix}-root {
+    overflow: visible;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: @bar-height;
+    color: @text-color-normal;
+    line-height: @bar-height;
+    &.@{prefix}-topleft {
+        @{prefix}-auth-state.@{prefix}-root {
+            & + * {
+                top: 65px;
+                left: 0;
+            }
+        }
+    }
+    &.@{prefix}-topright {
+        @{prefix}-auth-state.@{prefix}-root {
+            & + * {
+                top: 65px;
+                right: 0;
+            }
+        }
+    }
+    &.@{prefix}-bottomleft {
+        @{prefix}-auth-state.@{prefix}-root {
+            & + * {
+                top: -15px;
+                left: 0;
+                .transform(translateY(-100%));
+            }
+        }
+    }
+    &.@{prefix}-bottomright {
+        @{prefix}-auth-state.@{prefix}-root {
+            & + * {
+                top: -15px;
+                right: 0;
+                .transform(translateY(-100%));
+            }
+        }
+    }
+    @{prefix}-auth-state.@{prefix}-root {
+        & + * {
+            position: absolute !important;
+            z-index: 9;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],[
-/* 0 */
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* Riot v3.13.2, @license MIT */

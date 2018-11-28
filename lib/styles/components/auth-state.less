@@ -1,0 +1,137 @@
+@prefix: groups;
+
+@{prefix}-auth-state.@{prefix}-root {
+    display: inline-block;
+    box-sizing: content-box !important;
+    height: @bar-height;
+    line-height: @bar-height;
+    border: none;
+    background-color: @shade-color;
+    .@{prefix}-content {
+        height: inherit;
+        .no-padding !important;
+        .bold-font;
+        font-size: 1.2em;
+        line-height: inherit;
+        background-color: transparent !important;
+        a {
+            float: left;
+            color: @theme-color;
+            border-right-width: 1px;
+            border-right-style: dotted;
+            border-right-color: fade(@theme-color, 20%);
+            background-color: transparent;
+            .disable-selection;
+            &:hover {
+                background-color: fade(@contrast-color, 50%);
+            }
+            &:last-of-type {
+                border-right-width: 0 !important;
+            }
+            &.@{prefix}-active {
+                background-color: @contrast-color;
+            }
+        }
+        .@{prefix}-not-logged {
+            height: inherit;
+            line-height: inherit;
+            text-align: center;
+            a {
+                display: inline-block;
+                padding: 0 1em;
+                .bold-font;
+                line-height: inherit;
+            }
+        }
+        .@{prefix}-logged {
+            height: inherit;
+            line-height: inherit;
+            a {
+                display: inline-block;
+                line-height: inherit;
+                .transition(background-color .35s ease);
+            }
+            .@{prefix}-idle {
+                padding: 0 1em;
+            }
+            .@{prefix}-details {
+                float: left;
+                height: inherit;
+                padding: 5px;
+                & > * {
+                    float: left;
+                    pointer-events: none;
+                }
+                img {
+                    width: auto;
+                    height: 100%;
+                    .border-radius(@border-radius-medium);
+                }
+                span {
+                    position: relative;
+                    top: -5px;
+                    height: inherit;
+                    max-width: 10em;
+                    padding: 0 .75em;
+                    color: @theme-color;
+                    .bold-font;
+                    line-height: inherit;
+                    .single-line-text;
+                    vertical-align: middle;
+                }
+            }
+            .@{prefix}-exit {
+                float: right;
+                width: auto;
+                height: 100%;
+                text-align: center;
+                padding: 15px;
+                svg {
+                    display: inline-block;
+                    position: relative;
+                    top: -1px;
+                    width: auto;
+                    height: inherit;
+                    path {
+                        fill: fade(@theme-color, 50%);
+                        .transition(fill .35s ease);
+                    }
+                }
+            }
+        }
+    }
+    &.@{prefix}-color {
+        background-color: @theme-color;
+        .@{prefix}-content {
+            a {
+                color: white !important;
+                border-right-color: fade(white, 35%) !important;
+                &:hover {
+                    background-color: fade(black, 5%) !important;
+                }
+                &.@{prefix}-active {
+                    background-color: fade(black, 10%) !important;
+                }
+            }
+            .@{prefix}-logged {
+                a {
+                    span {
+                        color: white !important;
+                    }
+                }
+                .@{prefix}-exit {
+                    svg {
+                        path {
+                            fill: fade(white, 50%) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.@{prefix}-inline {
+        border: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}

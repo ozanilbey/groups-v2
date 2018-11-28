@@ -9,6 +9,10 @@
 		<meta name="author" content="GROU.PS Inc.">
 		<meta itemprop="name" content="Grou.ps v2">
 		<meta itemprop="description" content="Grou.ps v2">
+		<meta name="groups-id" content="79982844-6a27-4b3b-b77f-419a79be0e10">
+		<meta name="groups-host" content="https://gjs-singlesignon.herokuapp.com">
+		<meta name="groups-theme" content="dark">
+		<meta name="groups-color" content="rgb(93, 60, 246)">
 		<title>Grou.ps</title>
 		<!-- Bootstrap -->
 		<link rel="stylesheet" type="text/css" href="/site/vendor/bootstrap/bootstrap.min.css" />
@@ -68,6 +72,8 @@
 		        </div>
 		      </li>
 		    </ul>
+
+				<groups-auth position="topright" type="inline" theme="color" height="56px"></groups-auth>
 				<!--
 		    <form class="form-inline my-2 my-md-0">
 		      <input class="form-control" type="text" placeholder="Search">
@@ -124,5 +130,8 @@
 		<script type="text/javascript" src="/site/vendor/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="/site/scripts/vendor.js"></script>
 		<script type="text/javascript" src="/site/scripts/client.js"></script>
+		<script>
+			Groups.init()
+		</script>
 	</body>
 </html>

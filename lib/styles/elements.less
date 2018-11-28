@@ -1,0 +1,279 @@
+@prefix: groups;
+
+// Elements
+
+.@{prefix}-root {
+    font-size: @font-size-default;
+    line-height: @font-size-default;
+    color: @text-color-normal;
+    .regular-font;
+    letter-spacing: -.0075em;
+    *, *[type] {
+        .box-sizing(border-box);
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: 100%;
+    }
+    a {
+        cursor: pointer;
+        .text-color-states(@theme-color);
+        text-decoration: none;
+    }
+    b {
+        .bold-font;
+    }
+    h1 {
+        .bold-font;
+        font-size: 1.65em;
+    }
+    h2 {
+        .bold-font;
+        font-size: 1.35em;
+    }
+    img {
+        .disable-selection;
+    }
+    svg {
+        pointer-events: none;
+        .disable-selection;
+    }
+    input, input[type], textarea, button {
+        width: 100%;
+        padding: .75em 1em;
+        border: none;
+        .border-radius(@border-radius-small);
+        outline: none;
+    }
+    input, input[type], textarea {
+        color: @text-color-normal;
+        .regular-font;
+        font-size: @font-size-default;
+        line-height: @font-size-default;
+        border: 1px solid fade(black, 10%);
+        background-color: @contrast-color;
+        .placeholder-color(@text-color-weak);
+    }
+    textarea {
+        resize: none;
+    }
+    button {
+        cursor: pointer;
+        font-size: @font-size-default * 1.1;
+        color: white;
+        .heavy-font;
+        .single-line-text;
+        text-transform: uppercase;
+        .transition(background-color .35s ease);
+        .background-color-states(@theme-color);
+        .disable-selection;
+        &[disabled] {
+            opacity: .5;
+        }
+        &.@{prefix}-danger {
+            .background-color-states(@danger-color) !important;
+        }
+        &.@{prefix}-loading {
+            background-image: linear-gradient(-45deg, transparent 25%, rgba(0, 0, 0, .1) 25%, rgba(0, 0, 0, .1) 50%, transparent 50%, transparent 75%, rgba(0, 0, 0, .1) 75%);
+            background-size: 50px 50px;
+            .animation(loading-stripes 10s infinite linear);
+        }
+    }
+    form {
+        input, input[type], textarea {
+            position: relative;
+            margin-bottom: .5em;
+            .transition(border-color .35s ease);
+            &.@{prefix}-error {
+                border-color: @danger-color;
+                .animation(error-shake normal .35s ease-in-out);
+            }
+            & + button {
+                margin-top: .25em;
+            }
+        }
+        .@{prefix}-option {
+            display: block;
+            height: 3.3em;
+            margin-bottom: -2em;
+            a {
+                display: inline-block;
+                float: left;
+                opacity: 1;
+                color: @text-color-normal;
+                font-size: .9em;
+                line-height: 3.3em / .9;
+                text-align: center;
+                .transition(opacity .35s ease);
+                &:hover {
+                    opacity: .75;
+                }
+            }
+            &.@{prefix}-single {
+                a {
+                    width: 100%;
+                }
+            }
+            &.@{prefix}-double {
+                a {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+
+/* Window Width < 480 */
+@media only screen and (max-width: 479px) {
+    .@{prefix}-root {
+        font-size: @font-size-xsmall;
+        line-height: @font-size-xsmall;
+        input, input[type], textarea {
+            font-size: @font-size-xsmall;
+            line-height: @font-size-xsmall;
+        }
+        button {
+            font-size: @font-size-xsmall * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-xsmall * 2.6) (@font-size-xsmall * 2.6);
+            }
+        }
+        form {
+            .@{prefix}-option {
+                margin-bottom: -1em;
+            }
+        }
+    }
+}
+
+/* 480 ≤ Window Width < 768 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .@{prefix}-root {
+        font-size: @font-size-xsmall;
+        line-height: @font-size-xsmall;
+        input, input[type], textarea {
+            font-size: @font-size-xsmall;
+            line-height: @font-size-xsmall;
+        }
+        button {
+            font-size: @font-size-xsmall * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-xsmall * 2.6) (@font-size-xsmall * 2.6);
+            }
+        }
+        form {
+            .@{prefix}-option {
+                margin-bottom: -1em;
+            }
+        }
+    }
+}
+
+/* 768 ≤ Window Width < 1024 */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .@{prefix}-root {
+        font-size: @font-size-small;
+        line-height: @font-size-small;
+        input, input[type], textarea {
+            font-size: @font-size-small;
+            line-height: @font-size-small;
+        }
+        button {
+            font-size: @font-size-small * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-small * 2.6) (@font-size-small * 2.6);
+            }
+        }
+    }
+}
+
+/* 1024 ≤ Window Width < 1152 */
+@media only screen and (min-width: 1024px) and (max-width: 1151px) {
+    .@{prefix}-root {
+        font-size: @font-size-medium;
+        line-height: @font-size-medium;
+        input, input[type], textarea {
+            font-size: @font-size-medium;
+            line-height: @font-size-medium;
+        }
+        button {
+            font-size: @font-size-medium * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-medium * 2.6) (@font-size-medium * 2.6);
+            }
+        }
+    }
+}
+
+/* 1152 ≤ Window Width < 1280 */
+@media only screen and (min-width: 1152px) and (max-width: 1280px) {
+    .@{prefix}-root {
+        font-size: @font-size-medium;
+        line-height: @font-size-medium;
+        input, input[type], textarea {
+            font-size: @font-size-medium;
+            line-height: @font-size-medium;
+        }
+        button {
+            font-size: @font-size-medium * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-medium * 2.6) (@font-size-medium * 2.6);
+            }
+        }
+    }
+}
+
+/* 1280 ≤ Window Width < 1440 */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    .@{prefix}-root {
+        font-size: @font-size-large;
+        line-height: @font-size-large;
+        input, input[type], textarea {
+            font-size: @font-size-large;
+            line-height: @font-size-large;
+        }
+        button {
+            font-size: @font-size-large * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-large * 2.6) (@font-size-large * 2.6);
+            }
+        }
+    }
+}
+
+/* 1440 ≤ Window Width < 1680 */
+@media only screen and (min-width: 1440px) and (max-width: 1679px) {
+    .@{prefix}-root {
+        font-size: @font-size-large;
+        line-height: @font-size-large;
+        input, input[type], textarea {
+            font-size: @font-size-large;
+            line-height: @font-size-large;
+        }
+        button {
+            font-size: @font-size-large * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-large * 2.6) (@font-size-large * 2.6);
+            }
+        }
+    }
+}
+
+/* 1680 ≤ Window Width */
+@media only screen and (min-width: 1680px) {
+    .@{prefix}-root {
+        font-size: @font-size-xlarge;
+        line-height: @font-size-xlarge;
+        input, input[type], textarea {
+            font-size: @font-size-xlarge;
+            line-height: @font-size-xlarge;
+        }
+        button {
+            font-size: @font-size-xlarge * 1.1;
+            &.@{prefix}-loading {
+                background-size: (@font-size-xlarge * 2.6) (@font-size-xlarge * 2.6);
+            }
+        }
+    }
+}
